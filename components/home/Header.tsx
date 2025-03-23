@@ -6,8 +6,9 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Feather from "@expo/vector-icons/Feather";
 import AntDesign from "@expo/vector-icons/AntDesign";
-
+import { Link } from "expo-router";
 import { Image } from "react-native";
+import ProfileIcon from "../ui/ProfileIcon";
 const Header = () => {
   const [toggleSide, setToggleSide] = useState(false);
   const slideAnim = useRef(new Animated.Value(-350)).current; // Sidebar starts hidden
@@ -24,7 +25,7 @@ const Header = () => {
   return (
     <View className="relative">
       {/* Header */}
-      <View className="flex flex-row w-[90%] mt-4 justify-between items-center py-5 ">
+      <View className="flex  flex-row w-[90%] mx-auto mt-4 justify-between items-center pt-8 ">
         <TouchableOpacity onPress={toggleSidebar}>
           {toggleSide ? (
             <Entypo name="cross" size={34} color="black" />
@@ -33,11 +34,13 @@ const Header = () => {
           )}
         </TouchableOpacity>
         <View className="text-3xl font-normal">
-          <Image
-            className="h-[60px] w-[60px] bg-blend-normal"
-            source={require("@/assets/images/bu1.png")}
-            alt="Login Page"
-          />
+          <Link href={'/'}>
+            <Image
+              className="h-[55px] w-[55px] bg-blend-normal"
+              source={require("@/assets/images/bu1.png")}
+              alt="Login Page"
+            />
+          </Link>
         </View>
         <Entypo name="dots-three-horizontal" size={34} color="black" />
       </View>
@@ -46,15 +49,17 @@ const Header = () => {
       <Animated.View
         style={{
           transform: [{ translateX: slideAnim }],
-          zIndex: 10, 
-         
+          zIndex: 10,
         }}
         className="absolute bg-white rounded-xl  z-2 top-[8rem] left-[-19px] h-screen w-[24rem]  p-9"
       >
-        
-        <Text className="text-3xl font-semibold">Prof. Sumit Gupta</Text>
-        <Text className="text-base text-[#9ea8b8] font- mt-8">MENU</Text>
-
+        <View className=" mt-[1rem] flex flex-col gap-4 pl-[1rem] justify-center items-center">
+          <ProfileIcon size={80} name="Sumit Gupta" />
+          <Text className="text-3xl font-semibold ml-4]">
+            Prof. Sumit Gupta
+          </Text>
+        </View>
+        <Text className="text-base text-[#9ea8b8] ml-4 mt-8">MENU</Text>
         <View className="px-5 mt-8">
           <View className="flex flex-row items-center justify-between">
             <View className="flex flex-row items-center gap-3">

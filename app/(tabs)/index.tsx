@@ -1,16 +1,17 @@
-import { Image, StyleSheet, Platform, View, Text } from "react-native";
+import { View, Text } from "react-native";
 import { Link } from "expo-router";
-import Header from "@/components/home/Header";
-
-
 export default function HomeScreen() {
   return (
-    <View className="text-center min-h-screen flex py-5 items-center z-1">
-      <Header />
-      <Text className="mt-10">
-        <Link href={"/login"}> Login</Link>
+    <View className="flex justify-center min-h-screen items-center">
+      <Text className="text-3xl ">
+        <Link href={"/login"}>Login Page</Link>
       </Text>
-      
+      <Text className="text-3xl ">
+        <Link href={"/profile"}>Profile Page</Link>
+      </Text>
+      <Text className="text-3xl ">
+        <Link href={"/calender"}>Calender</Link>
+      </Text>
     </View>
   );
 }
