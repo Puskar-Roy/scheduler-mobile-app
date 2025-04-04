@@ -6,9 +6,11 @@ export default function HomeScreen() {
       <Text className="text-3xl ">
         <Link href={"/login"}>Login Page</Link>
       </Text>
+      
       <Text className="text-3xl ">
         <Link href={"/profile"}>Profile Page</Link>
       </Text>
+      
       <Text className="text-3xl ">
         <Link href={"/calender"}>Calender</Link>
       </Text>
